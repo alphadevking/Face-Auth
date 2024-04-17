@@ -175,7 +175,8 @@ client/*.ntvs*
 client/*.njsproj
 client/*.sln
 client/*.sw?
+# client/install.bat
 
 server/keep.txt
-server/run.sh
 server/test.db
+# server/install.bat
