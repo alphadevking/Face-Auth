@@ -20,7 +20,7 @@ def get_db():
         db.close()
 
 
-def create_user_session(user: User, db: SQLSession, session_duration: int = 120):
+def create_user_session(user: User, db: SQLSession, session_duration: int = 60*60):
     # Create a session token and store it in the database
     session_token = create_session_token()
     expiration_time = datetime.utcnow() + timedelta(seconds=session_duration)

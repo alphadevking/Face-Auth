@@ -1,5 +1,5 @@
 import React, { useCallback, /* useContext, */ useRef, useState } from 'react';
-import { Button, Divider, Form, Input, Modal, Space } from 'antd';
+import { Button, Divider, Form, Input, Modal, Space, notification } from 'antd';
 import Webcam from 'react-webcam';
 import axios from 'axios';
 import { useAuth } from '../../utils/contexts/AuthContext';
@@ -28,6 +28,7 @@ const Login: React.FC = () => {
     const [submitLoading, setSubmitLoading] = useState<boolean>(false);
     const [form] = Form.useForm<LoginValues>();
     const [webcamKey, setWebcamKey] = useState<number>(0);
+    const [api, contextHolder] = notification.useNotification();
 
     const { fetchUser } = useAuth();
 
@@ -98,8 +99,15 @@ const Login: React.FC = () => {
                 setIsAlertModalVisible(true);
             }).catch(error => {
                 // Handle login error
-                console.error(error.response?.data?.detail || 'An error occurred during login.'); setAlertModalContent({ title: 'Error', message: error.response.data.detail });
+                console.error(error.response?.data?.detail || 'An error occurred during login.');
+                setAlertModalContent({ title: 'Error', message: error.response.data.detail });
                 setIsAlertModalVisible(true);
+
+                api['error']({
+                    message: 'Error',
+                    description: 'Adjust lighting around you!'
+                })
+                
             }).finally(() => {
                 setSubmitLoading(false);
             });
@@ -110,17 +118,18 @@ const Login: React.FC = () => {
 
     return (
         <>
-            <Content className='p-5 min-h-screen m-auto grid max-w-xl items-center'>
+            {contextHolder}
+            <Content className='grid items-center max-w-xl min-h-screen p-5 m-auto'>
                 <div className='grid gap-2'>
-                    
-                    <Link to='/' className='grid gap-2 justify-center items-center'>
-                        <MacCommandFilled className='text-5xl text-blue-900 mx-auto' />
-                        <div className='text-2xl font-bold bg-gradient-to-br from-slate-500 to-slate-800 bg-clip-text text-transparent'>Authr University</div>
+
+                    <Link to='/' className='grid items-center justify-center gap-2'>
+                        <MacCommandFilled className='mx-auto text-5xl text-blue-900' />
+                        <div className='text-2xl font-bold text-transparent bg-gradient-to-br from-slate-500 to-slate-800 bg-clip-text'>Authr University</div>
                     </Link>
 
-                    <div className='grid gap-3 border p-5 rounded-xl'>
+                    <div className='grid gap-3 p-5 border rounded-xl'>
 
-                        <div className='text-cyan-600 font-semibold text-lg'>
+                        <div className='text-lg font-semibold text-cyan-600'>
                             Login
                         </div>
 

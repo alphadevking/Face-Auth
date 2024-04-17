@@ -1,4 +1,4 @@
-import { Button, /* Checkbox, */ Divider, Form, Input, Modal } from 'antd';
+import { Button, /* Checkbox, */ Divider, Form, Input, Modal, notification } from 'antd';
 import { Content } from 'antd/es/layout/layout';
 import axios from 'axios';
 import { useCallback, useEffect, useRef, useState } from 'react';
@@ -85,6 +85,7 @@ const FaceVerify = () => {
     const [isAlertModalVisible, setIsAlertModalVisible] = useState<boolean>(false);
     const [alertModalContent, setAlertModalContent] = useState({ title: '', message: '' });
     const [submitLoading, setSubmitLoading] = useState<boolean>(false);
+    const [api, contextHolder] = notification.useNotification();
 
     const handleFormSubmission = async () => {
         setSubmitLoading(true)
@@ -116,6 +117,11 @@ const FaceVerify = () => {
                 // On error
                 setAlertModalContent({ title: 'Error', message: error.response.data.detail });
                 setIsAlertModalVisible(true);
+
+                api['error']({
+                    message: 'Error',
+                    description: 'Adjust lighting around you!'
+                })
             }).finally(() => {
                 setSubmitLoading(false);
             });
@@ -128,15 +134,16 @@ const FaceVerify = () => {
 
     return (
         <>
-            <Content className='p-5 min-h-screen m-auto grid max-w-xl items-center'>
+            {contextHolder}
+            <Content className='grid items-center max-w-xl min-h-screen p-5 m-auto'>
                 <div className='grid gap-2'>
-                    <Link to='/' className='grid gap-2 justify-center items-center'>
-                        <MacCommandFilled className='text-5xl text-blue-900 mx-auto' />
-                        <div className='text-2xl font-bold bg-gradient-to-br from-slate-500 to-slate-800 bg-clip-text text-transparent'>Authr University</div>
+                    <Link to='/' className='grid items-center justify-center gap-2'>
+                        <MacCommandFilled className='mx-auto text-5xl text-blue-900' />
+                        <div className='text-2xl font-bold text-transparent bg-gradient-to-br from-slate-500 to-slate-800 bg-clip-text'>Authr University</div>
                     </Link>
 
-                    <div className='grid gap-1 border p-5 rounded-xl'>
-                        <div className='text-cyan-600 font-semibold text-lg'>
+                    <div className='grid gap-1 p-5 border rounded-xl'>
+                        <div className='text-lg font-semibold text-cyan-600'>
                             Register
                         </div>
                         <Divider className='my-3' />
