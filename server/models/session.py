@@ -16,4 +16,4 @@ class Session(Base):
     )
     expiration = Column(DateTime, nullable=False)
 
-    user = relationship("User", back_populates="sessions")
+    user = relationship("User", back_populates="sessions") 

@@ -987,7 +987,7 @@
         "kind": 2,
         "importPath": "server.session",
         "description": "server.session",
-        "peekOfCode": "def create_session_token() -> str:\n    return secrets.token_urlsafe()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\ndef create_user_session(user: User, db: SQLSession, session_duration: int = 120):\n    # Create a session token and store it in the database",
+        "peekOfCode": "def create_session_token() -> str:\n    return secrets.token_urlsafe()\ndef get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\ndef create_user_session(user: User, db: SQLSession, session_duration: int = 60*60):\n    # Create a session token and store it in the database",
         "detail": "server.session",
         "documentation": {}
     },
@@ -996,7 +996,7 @@
         "kind": 2,
         "importPath": "server.session",
         "description": "server.session",
-        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\ndef create_user_session(user: User, db: SQLSession, session_duration: int = 120):\n    # Create a session token and store it in the database\n    session_token = create_session_token()\n    expiration_time = datetime.utcnow() + timedelta(seconds=session_duration)",
+        "peekOfCode": "def get_db():\n    db = SessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()\ndef create_user_session(user: User, db: SQLSession, session_duration: int = 60*60):\n    # Create a session token and store it in the database\n    session_token = create_session_token()\n    expiration_time = datetime.utcnow() + timedelta(seconds=session_duration)",
         "detail": "server.session",
         "documentation": {}
     },
@@ -1005,7 +1005,7 @@
         "kind": 2,
         "importPath": "server.session",
         "description": "server.session",
-        "peekOfCode": "def create_user_session(user: User, db: SQLSession, session_duration: int = 120):\n    # Create a session token and store it in the database\n    session_token = create_session_token()\n    expiration_time = datetime.utcnow() + timedelta(seconds=session_duration)\n    new_session = Session(\n        user_id=user.id, session_token=session_token, expiration=expiration_time\n    )\n    db.add(new_session)\n    db.commit()\n    return session_token",
+        "peekOfCode": "def create_user_session(user: User, db: SQLSession, session_duration: int = 60*60):\n    # Create a session token and store it in the database\n    session_token = create_session_token()\n    expiration_time = datetime.utcnow() + timedelta(seconds=session_duration)\n    new_session = Session(\n        user_id=user.id, session_token=session_token, expiration=expiration_time\n    )\n    db.add(new_session)\n    db.commit()\n    return session_token",
         "detail": "server.session",
         "documentation": {}
     },

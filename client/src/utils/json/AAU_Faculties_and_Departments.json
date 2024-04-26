@@ -1,0 +1,160 @@
+{
+    "Faculties": [
+        {
+            "name": "Faculty of Agriculture",
+            "departments": [
+                "Crop Science",
+                "Soil Science",
+                "Animal Science",
+                "Agricultural Economics and Extension"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Arts",
+            "departments": [
+                "English",
+                "History and International Studies",
+                "Modern Languages",
+                "Philosophy",
+                "Religious Management and Cultural Studies",
+                "Theatre and Media Arts"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Basic Sciences",
+            "departments": [
+                "Anatomy",
+                "Medical Biochemistry",
+                "Physiology"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Clinical Sciences",
+            "departments": [
+                "Community Medicine & Primary Health Care",
+                "Medicine",
+                "Obstetrics and Gynaecology",
+                "Paediatrics",
+                "Pharmacology And Therapeutics",
+                "Pathological Sciences",
+                "Surgery"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Education",
+            "departments": [
+                "Business Education",
+                "Curriculum and Instruction",
+                "Educational Foundations and Management",
+                "Guidance and Counselling",
+                "Physical and Health Education",
+                "Vocational and Technical Education"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Engineering and Technology",
+            "departments": [
+                "Civil Engineering",
+                "Electrical Electronic & Computer Engineering",
+                "Industrial & Production Engineering",
+                "Mechanical Engineering"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Environmental Studies",
+            "departments": [
+                "Architecture",
+                "Building",
+                "Fine and Applied Arts",
+                "Geography and Environmental Management"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Law",
+            "departments": [
+                "Commercial and Industrial Law",
+                "Private and Property Law",
+                "Public Law",
+                "Jurisprudence and International Law"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Life Sciences",
+            "departments": [
+                "Biochemistry",
+                "Plant Science and Biotechnology (Botany)",
+                "Microbiology",
+                "Zoology"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Physical Sciences",
+            "departments": [
+                "Chemistry",
+                "Computer Science",
+                "Mathematics and Statistics",
+                "Physics"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Management Sciences",
+            "departments": [
+                "Accounting",
+                "Banking and Finance",
+                "Business Administration",
+                "Public Administration"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Faculty of Social Sciences",
+            "departments": [
+                "Economics",
+                "Library and Information Science",
+                "Political Science",
+                "Psychology",
+                "Sociology"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Department of Fine and Applied Arts",
+            "departments": [
+                "Painting",
+                "Sculpture",
+                "Ceramics",
+                "Textiles",
+                "Graphics",
+                "Metal Design"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Geography and Environmental Management",
+            "departments": [
+                "Geography and Environmental Management"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        },
+        {
+            "name": "Guidance and Counselling",
+            "departments": [
+                "Economics Education",
+                "Geography Education",
+                "Guidance and Counselling",
+                "Political Science Education"
+            ],
+            "course_completion_levels": ["100L", "200L", "300L", "400L"]
+        }
+    ]
+}

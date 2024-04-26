@@ -3,9 +3,18 @@ import axios from 'axios';
 
 export interface User {
     id: string;
-    username: string;
-    fullname: string;
-    bio: string;
+    student_id: string;
+    firstname: string;
+    middlename: string;
+    lastname: string;
+    date_of_birth: Date;
+    email: string;
+    phone_number: string;
+    faculty: string;
+    department: string;
+    level: string;
+    academic_session: string;
+    passport: string;
 }
 
 export interface UserData {
@@ -19,7 +28,7 @@ interface AuthContextType {
     fetchUser: () => Promise<void>;
 }
 
-const SESSION_DURATION = 30 * 60 * 1000; // 30 minutes
+const SESSION_DURATION = 60 * 60 * 1000; // 60 minutes
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -27,17 +36,21 @@ const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
-        const storedUserData = sessionStorage.getItem('userData');
-        if (storedUserData) {
-            const parsedData = JSON.parse(storedUserData);
-            const currentTime = new Date().getTime();
+        const checkData = () => {
+            const storedUserData = sessionStorage.getItem('userData');
+            if (storedUserData) {
+                const parsedData = JSON.parse(storedUserData);
+                const currentTime = new Date().getTime();
 
-            if (currentTime - parsedData.timestamp <= SESSION_DURATION) {
-                setUser(parsedData.user);
-            } else {
-                sessionStorage.removeItem('userData');
+                if (currentTime - parsedData.timestamp <= SESSION_DURATION) {
+                    setUser(parsedData.user);
+                } else {
+                    sessionStorage.removeItem('userData');
+                }
             }
         }
+        const interval = setInterval(checkData, 10000);
+        return () => clearInterval(interval);
     }, []);
 
     const fetchUser = async () => {
