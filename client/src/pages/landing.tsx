@@ -121,7 +121,6 @@ const Landing = () => {
                 </div>
             </Content>
             <Footer className="p-4 text-center">
-                {/* <p>Authr ©{new Date().getFullYear()} Created by AlphaDevSys</p> */}
             </Footer>
         </Layout>
     );

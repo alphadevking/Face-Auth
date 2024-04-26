@@ -116,7 +116,6 @@ const Login: React.FC = () => {
                     placement: "top",
                     duration: 3
                 })
-
             }).finally(() => {
                 setSubmitLoading(false);
             });

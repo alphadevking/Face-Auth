@@ -175,6 +175,7 @@ client/*.ntvs*
 client/*.njsproj
 client/*.sln
 client/*.sw?
+client/src/assets/user
 # client/install.bat
 
 server/keep.txt
