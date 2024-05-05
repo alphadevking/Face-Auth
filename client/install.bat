@@ -1,3 +1,3 @@
 echo Installing and using yarn to run the server...
-yarn install &
+@REM yarn install &
 yarn dev

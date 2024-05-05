@@ -76,6 +76,7 @@ const Login: React.FC = () => {
     };
 
     const handleLogin = async (values: LoginValues) => {
+        // console.log({...values, face_encoding: image});
         setSubmitLoading(true)
         if (!image) {
             api['warning']({
